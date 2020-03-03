@@ -1,16 +1,101 @@
 ﻿@model ContentsIndexVM
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Publish to Azure Guide";
 }
 
 <h1>Guide</h1>
-<h4>Publish ASP.NET Core 3.1 Web App + SQL Database to Azure</h4>
+<h5>Beginner tutorial on how to publish ASP.NET Core 3.1 Web App + SQL Database to Azure for free</h5>
 
-<p>Written 2020-03-02</p>
-
-<br/>
-
-<p>Step 1:</p>
-
-<p>Step 2:</p>
+<p>Written 2020-03-03</p>
+<hr />
+<h5>For this guide, you will need:</h5>
+<p>1. Visual Studio 2019 or later</p>
+<p>2. Microsoft SQL Server Management Studio</p>
+<p>3. An Azure account</p>
+<hr />
+<h5>Start by logging in to the Azure portal and go to "Home". </h5>
+<p>If you don't already have one, make sure to add a new Resource Group.</p>
+<img src="~/images/newResourceGroup.jpg" />
+<br />
+<br />
+<br />
+<p>Go back to "Home" and select "Create a resource".</p>
+<p>Then, search for "Web App + SQL" in the search bar, click on the matching result and then "Create".</p>
+<img src="~/images/newResourceWebAppSQL.jpg" />
+<br />
+<br />
+<br />
+<p>Make sure to choose "Use existing" Resource Group.</p>
+<img src="~/images/creatingWebAppSQL1.jpg" />
+<br />
+<br />
+<br />
+<p>Also, choose "Create new" App Service plan and make sure to choose the "F1 Free" pricing tier.</p>
+<img src="~/images/creatingWebAppSQL2.jpg" />
+<br />
+<br />
+<br />
+<p>Then, fill out the server details and make sure to save the Server name, Server Admin details and Password to a Notepad document.</p>
+<img src="~/images/creatingWebAppSQL3.jpg" />
+<br />
+<br />
+<br />
+<p>Save details for later..</p>
+<img src="~/images/serverDetails.jpg" />
+<br />
+<br />
+<br />
+<p>Finally, be sure to choose the "Free" SQL Database pricing tier.</p>
+<img src="~/images/creatingWebAppSQL4.jpg" />
+<br />
+<br />
+<br />
+<p>Now, go to "Home" and choose the App Service you just created.</p>
+<p>On the left hand side of the page, look for "Settings" and press "Configuration" This will take you to "Application settings".</p>
+<p>Copy the Connection String and save in Notepad for later.</p>
+<img src="~/images/Configuration1.jpg" />
+<br />
+<br />
+<br />
+<p>On the same page, press "General settings" and then click on the dropdown menu from Stack settings and choose ".NET Core". </p>
+<p>Lastly, make sure to press save.</p>
+<img src="~/images/Configuration2.jpg" />
+<br />
+<br />
+<br />
+<p>Start Microsoft SQL Server Management Studio and log in to your server on Azure using the server details from earlier.</p>
+<img src="~/images/SQL1.jpg" />
+<br />
+<br />
+<br />
+<p>If you have a database already, copy the "CREATE TABLE"-code from the local database project.</p>
+<p>To do this, open your database folder and then open the "Tables"-folder. Right-click "dbo.contents" and do the following to get access to the code you want to copy:</p>
+<img src="~/images/SQL2.jpg" />
+<br />
+<br />
+<br />
+<p>Now, if you haven't already, create a ASP.NET Core 3.1 project in Visual Studio. Use the MVC pattern.</p>
+<img src="~/images/MVC1.jpg" />
+<br />
+<br />
+<br />
+<p>Create a folder in your project with the name "wwwroot" before the next step:</p>
+<p>In appsettings.json, add the connection string from Azure that you saved earlier.</p>
+<p>If you are planning on uploading the project to GitHub, it is a good idea to hide the Connection String in "User Secrets" (Google it!).</p>
+<img src="~/images/ConnectionString.jpg" />
+<br />
+<hr />
+<p>Add your database to the MVC project (This is not the tutorial for that) and finish your project.</p>
+<hr />
+<p>Lastly, Publish the project to Azure using Visual Studio by right-clicking the project and choosing "Publish...".</p>
+<p>Make sure to choose "Select Existing" on Azure App Service. Then select the free App Service plan you created on the Azure portal earlier.</p>
+<p>Otherwise, Azure will set the price tier to standard by default which costs you money.</p>
+<img src="~/images/Publish1.jpg" />
+<br />
+<br />
+<br />
+<h5>There you go! I Hope this guide was helpful.</h5>
+<br />
+<br />
+<br />
